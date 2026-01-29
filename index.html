@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meiyang Accessory | 日常的微光</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jp: {
+                            bg: '#F5F1EA',     /* 淺木白 (Main Card) */
+                            dark: '#594A42',   /* 深咖啡 (Text) */
+                            gray: '#9C8C74',   /* 暖灰褐 (Subtitle) */
+                            accent: '#AF8F6F', /* 木頭棕 (Accent) */
+                            line: '#DBCBB8'    /* 淺木紋線條 (Border) */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        serif: ['Noto Serif TC', 'serif'],
+                    },
+                    letterSpacing: {
+                        'widest-xl': '0.2em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #E6DED5; /* 外部背景：較深的暖木色 */
+        }
+        .wood-texture {
+            background-color: #F5F1EA;
+            /* 加入細微的雜點紋理，模擬紙張或木頭質感 */
+            background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3h1v1H1V3zm2-2h1v1H3V1z' fill='%238c7b65' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        /* 優雅的淡入動畫 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="text-jp-dark min-h-screen flex flex-col items-center">
+
+    <!-- 手機版面容器 -->
+    <main class="w-full max-w-[480px] min-h-screen wood-texture shadow-xl relative flex flex-col p-8 border-x border-white/40">
+        
+        <!-- 頂部 Header：極簡排版 -->
+        <header class="flex flex-col items-center mt-8 mb-12 animate-fade-in">
+            <div class="w-24 h-24 rounded-full overflow-hidden border border-jp-line p-1 mb-6 grayscale-[0.5] hover:grayscale-0 transition-all duration-700 bg-white/50">
+                <!-- 這裡保留原本的邏輯，使用佔位圖或您的 Logo -->
+                <div class="w-full h-full rounded-full bg-[#F5F1EA] flex items-center justify-center overflow-hidden">
+                     <span class="font-serif text-3xl text-jp-accent italic">M</span>
+                </div>
+            </div>
+            
+            <h1 class="text-2xl font-serif tracking-widest-xl text-jp-dark">MEIYANG</h1>
+            <div class="h-[1px] w-8 bg-jp-accent my-3 opacity-60"></div>
+            <p class="text-xs font-sans tracking-widest text-jp-gray uppercase">Accessory Studio</p>
+        </header>
+
+        <!-- 簡介文字 -->
+        <div class="text-center mb-12 px-4 animate-fade-in" style="animation-delay: 0.2s;">
+            <p class="font-serif text-sm leading-8 text-jp-dark/90 tracking-widest">
+                日常裡的微光。<br>
+                <span class="text-xs text-jp-gray">純銀 · 醫療鋼 · 選物</span>
+            </p>
+        </div>
+
+        <!-- 社群 Icon -->
+        <div class="flex justify-center gap-8 mb-12 animate-fade-in" style="animation-delay: 0.3s;">
+             <a href="https://www.instagram.com/meiyang.16888" target="_blank" class="text-jp-gray hover:text-jp-accent transition-colors duration-300">
+                <i data-lucide="instagram" class="w-5 h-5 stroke-[1.5]"></i>
+            </a>
+            <a href="#" class="text-jp-gray hover:text-jp-accent transition-colors duration-300">
+                <i data-lucide="shopping-bag" class="w-5 h-5 stroke-[1.5]"></i>
+            </a>
+            <a href="#" class="text-jp-gray hover:text-jp-accent transition-colors duration-300">
+                <i data-lucide="mail" class="w-5 h-5 stroke-[1.5]"></i>
+            </a>
+        </div>
+
+        <!-- 連結列表 (日系線框風格) -->
+        <nav class="space-y-5 flex-grow animate-fade-in" style="animation-delay: 0.4s;">
+            
+            <!-- Link 1 -->
+            <a href="#" class="group block relative">
+                <!-- 陰影框改成暖色調 -->
+                <div class="absolute inset-0 border border-jp-line/60 translate-x-1 translate-y-1 transition-transform group-hover:translate-x-2 group-hover:translate-y-2 bg-[#EFE8DE]"></div>
+                <div class="relative bg-[#FFFCF7] border border-jp-line p-4 flex items-center justify-between transition-transform group-hover:-translate-y-0.5">
+                    <div class="flex items-center gap-4">
+                        <span class="font-serif text-xs text-jp-accent">01.</span>
+                        <span class="font-serif text-sm tracking-widest text-jp-dark">Shopee 蝦皮賣場</span>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-jp-gray group-hover:text-jp-dark"></i>
+                </div>
+            </a>
+
+            <!-- Link 2 -->
+            <a href="#" class="group block relative">
+                <div class="absolute inset-0 border border-jp-line/60 translate-x-1 translate-y-1 transition-transform group-hover:translate-x-2 group-hover:translate-y-2 bg-[#EFE8DE]"></div>
+                <div class="relative bg-[#FFFCF7] border border-jp-line p-4 flex items-center justify-between transition-transform group-hover:-translate-y-0.5">
+                    <div class="flex items-center gap-4">
+                        <span class="font-serif text-xs text-jp-accent">02.</span>
+                        <span class="font-serif text-sm tracking-widest text-jp-dark">In Stock 現貨專區</span>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-jp-gray group-hover:text-jp-dark"></i>
+                </div>
+            </a>
+
+             <!-- Link 3 -->
+             <a href="#" class="group block relative">
+                <div class="absolute inset-0 border border-jp-line/60 translate-x-1 translate-y-1 transition-transform group-hover:translate-x-2 group-hover:translate-y-2 bg-[#EFE8DE]"></div>
+                <div class="relative bg-[#FFFCF7] border border-jp-line p-4 flex items-center justify-between transition-transform group-hover:-translate-y-0.5">
+                    <div class="flex items-center gap-4">
+                        <span class="font-serif text-xs text-jp-accent">03.</span>
+                        <span class="font-serif text-sm tracking-widest text-jp-dark">Reviews 好評推薦</span>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-3 h-3 text-jp-gray group-hover:text-jp-dark"></i>
+                </div>
+            </a>
+
+        </nav>
+
+        <!-- 裝飾性元素 -->
+        <div class="absolute top-10 left-4 opacity-30 hidden md:block">
+            <div class="w-[1px] h-32 bg-jp-accent"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center">
+            <p class="font-serif text-[10px] text-jp-gray tracking-[0.3em] opacity-80">MEIYANG &copy; 2024</p>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
