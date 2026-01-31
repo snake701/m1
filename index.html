@@ -121,10 +121,14 @@
                 </h1>
                 <p class="text-xs md:text-sm text-hana-secondary font-medium mt-3 tracking-[0.2em] uppercase font-sans text-center">Botanical & Accessory</p>
                 
-                <div class="flex items-center gap-3 mt-6 opacity-60">
-                    <div class="h-[1px] w-8 bg-hana-secondary"></div>
-                    <i data-lucide="flower-2" class="w-4 h-4 text-hana-accent"></i>
-                    <div class="h-[1px] w-8 bg-hana-secondary"></div>
+                <!-- 左側極簡社群按鈕 (新增) -->
+                <div class="flex items-center gap-3 mt-6 opacity-70">
+                    <a href="https://www.instagram.com/meiyang.16888" target="_blank" class="p-2 border border-hana-secondary/30 rounded-full hover:bg-hana-pink/20 hover:text-hana-accent transition-colors">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="p-2 border border-hana-secondary/30 rounded-full hover:bg-hana-green/20 hover:text-hana-green transition-colors" title="Contact">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </header>
         </div>
@@ -133,7 +137,7 @@
         <div class="flex flex-col md:w-7/12 w-full md:pl-4">
             
             <!-- 品牌簡介區塊 -->
-            <section class="text-center md:text-left mb-8 space-y-6">
+            <section class="text-center md:text-left mb-6 space-y-6">
                 
                 <!-- 第一段：理念 -->
                 <div class="space-y-4">
@@ -157,61 +161,43 @@
                     </p>
                 </div>
 
+                <!-- IG 極簡文字連結 (取代原本的大區塊) -->
+                <div class="flex justify-end md:justify-start">
+                    <a href="https://www.instagram.com/meiyang.16888" target="_blank" class="inline-flex items-center gap-2 mt-1 px-3 py-1.5 border border-hana-line/40 rounded-full bg-white/50 text-hana-accent hover:bg-hana-pink/10 hover:border-hana-accent/40 transition-all duration-300 group cursor-pointer">
+                        <i data-lucide="instagram" class="w-3.5 h-3.5 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-[11px] font-bold tracking-wider font-sans">meiyang.16888</span>
+                    </a>
+                </div>
+
                 <!-- 第三段：特點與品項 -->
-                <div class="pt-2 flex flex-col items-center md:items-start w-full">
+                <div class="pt-4 flex flex-col items-center md:items-start w-full">
                     <!-- 特點 (單行橫向滑動) -->
                     <div class="flex flex-nowrap overflow-x-auto no-scrollbar w-full justify-center md:justify-start gap-2 mb-3 pb-1">
-                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[12px] text-hana-text font-medium tracking-widest whitespace-nowrap">手工製作</span>
-                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[12px] text-hana-text font-medium tracking-widest whitespace-nowrap">原創飾品</span>
-                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[12px] text-hana-text font-medium tracking-widest whitespace-nowrap">日式手作</span>
-                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[12px] text-hana-text font-medium tracking-widest whitespace-nowrap">異素材結合</span>
+                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[11px] text-hana-text font-medium tracking-widest whitespace-nowrap">手工製作</span>
+                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[11px] text-hana-text font-medium tracking-widest whitespace-nowrap">原創飾品</span>
+                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[11px] text-hana-text font-medium tracking-widest whitespace-nowrap">日式手作</span>
+                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[11px] text-hana-text font-medium tracking-widest whitespace-nowrap">異素材結合</span>
                     </div>
                     
                     <!-- 品項 (單行文字列表) -->
                     <div class="mt-2 border-t border-hana-line/50 pt-3 w-full text-center md:text-left">
-                         <p class="text-[12px] text-hana-secondary tracking-wider leading-loose">
+                         <p class="text-[11px] text-hana-secondary tracking-wider leading-loose">
                             <span class="text-hana-accent font-bold mr-1">品項：</span>
                             耳環 · 項鍊 · 手鍊 · 髮飾 · 髮夾 · 吊飾 · 配件
                         </p>
                     </div>
 
-                    <!-- 合作邀約 (位置調整至此) -->
+                    <!-- 合作邀約 -->
                     <div class="mt-4 w-full text-center md:text-left">
-                         <div class="text-xs text-hana-text font-medium tracking-wide inline-block py-2 px-4 border border-dashed border-hana-line rounded-md bg-white/50 w-full md:w-auto">
+                         <div class="text-[11px] text-hana-text font-medium tracking-wide inline-block py-2 px-4 border border-dashed border-hana-line rounded-md bg-white/50 w-full md:w-auto">
                             歡迎合作邀約，可私訊聊聊 <span class="text-hana-accent font-normal ml-1">小幫手會盡速回復喔!!</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 社群追蹤區塊 -->
-            <div class="w-full bg-white/80 p-6 rounded-xl border border-hana-line mb-8 relative overflow-hidden group shadow-md hover:shadow-lg transition-shadow duration-300">
-                <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-hana-pink to-hana-green opacity-80"></div>
-                
-                <div class="text-center space-y-3 relative z-10">
-                    <h3 class="text-hana-accent font-bold tracking-widest text-sm flex items-center justify-center gap-2">
-                        <i data-lucide="instagram" class="w-4 h-4"></i> 官方 Instagram
-                    </h3>
-                    
-                    <p class="text-xs text-hana-text tracking-wide font-medium">
-                        歡迎關注 ➕ 🔍 <span class="font-sans font-bold text-hana-text ml-1 text-sm">meiyang.16888</span>
-                    </p>
-
-                    <a href="https://www.instagram.com/meiyang.16888" target="_blank" rel="noopener noreferrer" class="block w-full py-3 bg-hana-pink/30 border border-hana-pink/50 hover:bg-hana-pink/50 text-hana-text rounded-lg text-xs md:text-sm tracking-wider transition-all my-2 font-bold flex items-center justify-center gap-2 group-hover:scale-[1.02]">
-                        <span>追蹤 IG 搶先看</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-
-                    <div class="flex justify-center flex-wrap gap-x-4 gap-y-1 text-[11px] text-hana-secondary font-medium font-sans">
-                        <span>▫️新品搶先看</span>
-                        <span>▫️不定時好康優惠</span>
-                        <span>▫️加碼抽好禮</span>
-                    </div>
-                </div>
-            </div>
-
             <!-- 精選作品區塊 (4張圖片) -->
-            <section class="mb-8 w-full mt-auto">
+            <section class="mb-8 w-full mt-auto pt-4 border-t border-hana-line/20">
                 <div class="flex items-center gap-3 mb-4 justify-center md:justify-start opacity-80">
                     <span class="text-xs tracking-[0.2em] text-hana-accent font-bold uppercase">Selected Works</span>
                     <div class="h-[1px] flex-grow bg-hana-line/60 max-w-[80px]"></div>
@@ -220,7 +206,6 @@
                 <div class="grid grid-cols-2 gap-3">
                     <!-- Item 1: 方形/貓掌款 -->
                     <div class="aspect-square bg-white p-2 shadow-sm border border-hana-line/40 rounded-sm group overflow-hidden relative">
-                        <!-- 檔案: product_01.png -->
                         <img src="product_01.png" class="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" alt="日系手作飾品">
                         <div class="absolute bottom-0 left-0 w-full p-2 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             <p class="text-[10px] text-hana-text text-center tracking-widest font-sans uppercase">Handmade</p>
@@ -228,7 +213,6 @@
                     </div>
                     <!-- Item 2: 花朵圈圈款 -->
                     <div class="aspect-square bg-white p-2 shadow-sm border border-hana-line/40 rounded-sm group overflow-hidden relative">
-                        <!-- 檔案: product_02.png -->
                         <img src="product_02.png" class="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" alt="日系手作飾品">
                         <div class="absolute bottom-0 left-0 w-full p-2 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             <p class="text-[10px] text-hana-text text-center tracking-widest font-sans uppercase">Earrings</p>
@@ -236,7 +220,6 @@
                     </div>
                     <!-- Item 3: 橢圓/幾何款 -->
                     <div class="aspect-square bg-white p-2 shadow-sm border border-hana-line/40 rounded-sm group overflow-hidden relative">
-                        <!-- 檔案: product_03.png -->
                         <img src="product_03.png" class="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" alt="日系手作飾品">
                          <div class="absolute bottom-0 left-0 w-full p-2 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             <p class="text-[10px] text-hana-text text-center tracking-widest font-sans uppercase">Resin Art</p>
@@ -244,7 +227,6 @@
                     </div>
                      <!-- Item 4: 圓形耳針款 -->
                     <div class="aspect-square bg-white p-2 shadow-sm border border-hana-line/40 rounded-sm group overflow-hidden relative">
-                        <!-- 檔案: product_04.png -->
                         <img src="product_04.png" class="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" alt="日系手作飾品">
                          <div class="absolute bottom-0 left-0 w-full p-2 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             <p class="text-[10px] text-hana-text text-center tracking-widest font-sans uppercase">Design</p>
@@ -254,7 +236,7 @@
             </section>
 
             <!-- Footer (純版權) -->
-            <footer class="mt-8 pt-6 border-t border-hana-line/30 flex flex-col items-center md:items-start text-center md:text-left relative z-10 w-full">
+            <footer class="mt-4 pt-6 border-t border-hana-line/30 flex flex-col items-center md:items-start text-center md:text-left relative z-10 w-full">
                 <div class="w-full text-center md:text-right">
                     <p class="text-[10px] text-hana-secondary/60 tracking-[0.2em] font-sans font-medium">© 2024 Mei Yang 美揚日系手作飾品</p>
                 </div>
