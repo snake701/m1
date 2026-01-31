@@ -3,196 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meiyang Accessory | 日常的微光</title>
+    <title>Mei Yang 美揚日系手作飾品 | 官方網站</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        theme: {
-                            bg: '#FDFBF7',      /* 更加淨白的米色背景 */
-                            card: '#FFFFFF',    /* 純白卡片 */
-                            primary: '#5C5046', /* 暖深灰 (文字) */
-                            secondary: '#8C8074',/* 淺灰褐 (次要文字) */
-                            accent: '#C4A484',  /* 駝色 (點綴) */
-                            border: '#EBE5DE'   /* 極淡的邊框 */
+                        hana: {
+                            bg: '#FFFEFA',      /* 象牙白 */
+                            pink: '#EBC5C2',    /* 乾燥玫瑰粉 */
+                            green: '#BDCFA9',   /* 抹茶綠 */
+                            text: '#54433A',    /* 深咖啡色 */
+                            accent: '#A65E5E',  /* 深胭脂紅 */
+                            line: '#D4C5B9',    /* 暖灰褐線條 */
+                            secondary: '#8C7B70' /* 次要文字顏色 */
                         }
                     },
                     fontFamily: {
                         sans: ['Noto Sans TC', 'sans-serif'],
                         serif: ['Noto Serif TC', 'serif'],
-                        display: ['Cormorant Garamond', 'serif'],
                     },
-                    letterSpacing: {
-                        'loose': '0.3em',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'fade-up': 'fadeUp 0.8s ease-out forwards',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        fadeUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
+                    boxShadow: {
+                        'paper': '0 8px 30px -4px rgba(84, 67, 58, 0.12)',
                     }
                 }
             }
         }
     </script>
     <style>
-        html { scroll-behavior: smooth; }
-        
         body {
-            background-color: #FDFBF7;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
-        }
-
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .blob {
-            position: absolute;
-            filter: blur(80px);
-            z-index: -1;
-            opacity: 0.6;
-            animation: float 10s ease-in-out infinite;
+            background-color: #F0EBE5;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(235, 197, 194, 0.5) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(189, 207, 169, 0.5) 0%, transparent 40%);
         }
         
-        /* 文字直排設定 */
-        .vertical-rl {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
+        /* 櫻花飄落動畫 */
+        .petal {
+            position: absolute;
+            background-color: #F8E6E4;
+            border-radius: 150% 0 150% 0;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { opacity: 0; transform: translate(0, -10vh) rotate(0deg); }
+            10% { opacity: 0.9; }
+            100% { opacity: 0; transform: translate(20px, 100vh) rotate(360deg); }
+        }
+
+        /* 讓容器看起來像一張高級信紙 */
+        .washi-card {
+            background-color: #FFFEFA;
+            background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3h1v1H1V3zm2-2h1v1H3V1z' fill='%238C7B70' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* 隱藏捲軸但保留功能 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Logo 動畫：花漾擺動 (Sway) */
+        @keyframes sway {
+            0%, 100% { transform: rotate(-8deg); }
+            50% { transform: rotate(8deg); }
+        }
+        
+        .animate-sway {
+            animation: sway 5s ease-in-out infinite; 
+            transform-origin: center center;
         }
     </style>
 </head>
-<body class="text-theme-primary min-h-screen flex justify-center selection:bg-theme-accent selection:text-white overflow-hidden">
+<body class="text-hana-text min-h-screen flex flex-col items-center justify-center py-4 md:py-8 px-2 md:px-4 font-serif relative overflow-x-hidden selection:bg-hana-pink selection:text-hana-text">
 
-    <!-- 背景光暈 -->
-    <div class="blob bg-[#E8DCC8] w-64 h-64 rounded-full top-[-5%] left-[-10%]"></div>
-    <div class="blob bg-[#E6EBE0] w-72 h-72 rounded-full bottom-[-10%] right-[-15%] animation-delay-2000"></div>
+    <!-- 花瓣背景層 -->
+    <div id="petals-container" class="fixed inset-0 pointer-events-none z-0"></div>
 
-    <!-- 主要內容區 -->
-    <main class="w-full max-w-[480px] h-screen overflow-y-auto hide-scrollbar relative flex flex-col p-6 sm:p-8 backdrop-blur-[1px]">
+    <!-- 主要容器 -->
+    <main class="w-[96%] max-w-[540px] md:w-full md:max-w-4xl min-h-[85vh] md:min-h-[600px] md:h-auto bg-hana-bg washi-card shadow-paper relative flex flex-col md:flex-row md:items-start md:gap-12 p-5 md:p-16 z-10 border border-hana-line transition-all duration-500 mx-auto rounded-sm md:rounded-none">
         
-        <!-- 頂部裝飾線 -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-12 bg-gradient-to-b from-theme-primary/0 to-theme-primary/20"></div>
+        <!-- 四角的裝飾線條 -->
+        <div class="absolute top-3 left-3 md:top-5 md:left-5 w-8 h-8 md:w-12 md:h-12 border-t border-l border-hana-accent/40"></div>
+        <div class="absolute top-3 right-3 md:top-5 md:right-5 w-8 h-8 md:w-12 md:h-12 border-t border-r border-hana-accent/40"></div>
+        <div class="absolute bottom-3 left-3 md:bottom-5 md:left-5 w-8 h-8 md:w-12 md:h-12 border-b border-l border-hana-accent/40"></div>
+        <div class="absolute bottom-3 right-3 md:bottom-5 md:right-5 w-8 h-8 md:w-12 md:h-12 border-b border-r border-hana-accent/40"></div>
 
-        <!-- Header -->
-        <header class="flex flex-col items-center mt-8 mb-8 animate-fade-in relative z-10">
-            <div class="relative group cursor-pointer mb-5">
-                <div class="absolute inset-0 rounded-full border border-theme-accent/30 scale-110 group-hover:scale-125 transition-transform duration-700"></div>
-                <div class="w-20 h-20 rounded-full bg-[#F2EFE9] flex items-center justify-center overflow-hidden shadow-lg shadow-theme-accent/5 relative z-10">
-                    <span class="font-display italic text-3xl text-theme-primary/80">M</span>
-                </div>
-            </div>
-            
-            <h1 class="font-display text-2xl tracking-widest font-medium text-theme-primary mb-2">MEIYANG</h1>
-            <p class="font-serif text-[11px] text-theme-secondary tracking-[0.3em]">美揚日系手作飾品</p>
-        </header>
-
-        <!-- --- 品牌介紹區塊 --- -->
-        
-        <!-- 1. 理念 Intro -->
-        <section class="mb-10 opacity-0 animate-fade-up" style="animation-delay: 0.1s; animation-fill-mode: forwards;">
-            <div class="relative px-4 py-2">
-                <p class="font-serif text-[13px] leading-7 text-center text-theme-primary/90 tracking-wide">
-                    以「花」為手作的出發點，<br>
-                    把花最美的姿態永久保存，是另一種延續的美好。<br>
-                    <span class="block my-3 w-1 bg-theme-accent/30 h-1 rounded-full mx-auto"></span>
-                    利用工藝樹脂、不凋花、乾燥花、日式凝膠，<br>
-                    再搭配不同的異素材，<br>
-                    讓飾品呈現出獨特的清新感。<br>
-                    <br>
-                    期待「美揚」能帶給妳喜悅，<br>
-                    成為精緻生活中的一部份。
-                </p>
-            </div>
-        </section>
-
-        <!-- 2. 特色與品項 (Card Style) -->
-        <section class="mb-12 opacity-0 animate-fade-up" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
-            <div class="bg-white/60 backdrop-blur-sm border border-white rounded-xl p-6 shadow-sm">
-                
-                <!-- 關於品牌 -->
-                <div class="mb-6 border-b border-theme-border pb-4">
-                    <h2 class="font-serif text-sm font-bold text-theme-primary mb-2 tracking-widest flex items-center gap-2">
-                        <span class="w-1 h-3 bg-theme-accent"></span>
-                        ABOUT
-                    </h2>
-                    <p class="text-xs text-theme-secondary leading-6 text-justify">
-                        日式職人手作技巧，搭配與結合不同異素材，使手作飾品呈現獨特美感，適合獨ㄧ無二特別的你/妳。
-                    </p>
-                </div>
-
-                <!-- 特點 Tags -->
-                <div class="mb-6">
-                    <h3 class="font-display text-xs text-theme-accent mb-3 tracking-widest uppercase">Features</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-[#F5F1EA] text-[10px] text-theme-primary rounded-full tracking-wider">#手工製作</span>
-                        <span class="px-3 py-1 bg-[#F5F1EA] text-[10px] text-theme-primary rounded-full tracking-wider">#原創飾品</span>
-                        <span class="px-3 py-1 bg-[#F5F1EA] text-[10px] text-theme-primary rounded-full tracking-wider">#日式手作</span>
-                        <span class="px-3 py-1 bg-[#F5F1EA] text-[10px] text-theme-primary rounded-full tracking-wider">#異素材結合</span>
-                    </div>
-                </div>
-
-                <!-- 品項 Items -->
-                <div>
-                    <h3 class="font-display text-xs text-theme-accent mb-3 tracking-widest uppercase">Items</h3>
-                    <p class="text-xs text-theme-secondary tracking-wide leading-6">
-                        耳環 · 項鍊 · 手鍊 · 髮飾 · 髮夾 · 吊飾 · 配件
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. IG & 合作 (Special Card) -->
-        <section class="opacity-0 animate-fade-up mb-12" style="animation-delay: 0.3s; animation-fill-mode: forwards;">
-            <a href="https://www.instagram.com/meiyang.16888" target="_blank" class="block relative group overflow-hidden rounded-xl">
-                <!-- IG 背景裝飾 -->
-                <div class="absolute inset-0 bg-gradient-to-br from-[#FDFBF7] to-[#F2EFE9] opacity-100"></div>
-                <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <i data-lucide="instagram" class="w-16 h-16 text-theme-primary"></i>
-                </div>
-                
-                <div class="relative border border-theme-accent/20 rounded-xl p-5 text-center transition-all group-hover:border-theme-accent/50">
-                    <p class="text-[10px] text-theme-accent tracking-widest mb-2 uppercase">Follow Us on Instagram</p>
-                    <h3 class="font-serif text-lg text-theme-primary mb-1 tracking-widest">meiyang.16888</h3>
-                    <p class="text-[10px] text-theme-secondary mb-4">新品搶先看 · 不定時優惠 · 抽好禮</p>
+        <!-- 左側區塊：品牌形象 -->
+        <div class="flex flex-col items-center md:w-5/12 md:border-r md:border-hana-line md:pr-12 md:h-auto md:sticky md:top-16 shrink-0 self-start w-full">
+            <!-- Header -->
+            <header class="flex flex-col items-center mb-8 md:mb-0 relative">
+                <div class="relative mb-6">
+                    <!-- Logo 動畫圈圈 -->
+                    <svg class="absolute -top-4 -left-4 w-40 h-40 text-hana-green animate-sway opacity-60 pointer-events-none" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3,6" />
+                        <path d="M50 8 A42 42 0 0 1 92 50 A42 42 0 0 1 50 92 A42 42 0 0 1 8 50 A42 42 0 0 1 50 8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="12,12" opacity="0.7"/>
+                        <path d="M50 4 L52 0 L54 4" fill="none" stroke="currentColor" stroke-width="1" />
+                    </svg>
                     
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-theme-primary text-[#FDFBF7] text-xs tracking-widest rounded-full group-hover:bg-theme-accent transition-colors">
-                        <span>追蹤美揚</span>
-                        <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                    <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-hana-line p-1 bg-white relative z-10 shadow-md">
+                        <!-- 請確保 S__153395212.jpg 在同一個資料夾 -->
+                        <img src="S__153395212.jpg" 
+                             alt="Mei Yang Logo" 
+                             class="w-full h-full object-cover rounded-full">
                     </div>
+                </div>
+                
+                <h1 class="text-xl md:text-2xl font-bold tracking-widest text-hana-text mt-4 text-center leading-relaxed">
+                    Mei Yang<br>美揚日系手作飾品
+                </h1>
+                <p class="text-xs md:text-sm text-hana-secondary font-medium mt-3 tracking-[0.2em] uppercase font-sans text-center">Botanical & Accessory</p>
+                
+                <div class="flex items-center gap-3 mt-6 opacity-60">
+                    <div class="h-[1px] w-8 bg-hana-secondary"></div>
+                    <i data-lucide="flower-2" class="w-4 h-4 text-hana-accent"></i>
+                    <div class="h-[1px] w-8 bg-hana-secondary"></div>
+                </div>
+            </header>
+        </div>
 
-                    <div class="mt-4 pt-4 border-t border-theme-border/60">
-                         <p class="text-[10px] text-theme-secondary/80">
-                            歡迎合作邀約，可私訊聊聊<br>小幫手會詳細回覆
+        <!-- 右側區塊：資訊內容 -->
+        <div class="flex flex-col md:w-7/12 w-full md:pl-4">
+            
+            <!-- 品牌簡介區塊 -->
+            <section class="text-center md:text-left mb-8 space-y-6">
+                
+                <!-- 第一段：理念 -->
+                <div class="space-y-4">
+                    <p class="text-sm md:text-base leading-8 tracking-wider text-hana-text font-medium text-justify md:text-left break-words">
+                        以「花」為手作的出發點，把花最美的姿態永久保存，是另一種延續的美好。
+                    </p>
+                    <p class="text-xs md:text-sm leading-7 text-hana-secondary font-normal text-justify md:text-left">
+                        利用工藝樹脂、不凋花、乾燥花、日式凝膠，再搭配不同的異素材，讓飾品呈現出獨特的清新感。
+                    </p>
+                    <p class="text-xs md:text-sm leading-7 text-hana-secondary font-normal text-justify md:text-left">
+                        期待「美揚日系手作飾品」能帶給妳喜悅，成為精緻生活中的一部份。
+                    </p>
+                </div>
+
+                <!-- 第二段：品牌宣言 -->
+                <div class="py-4 px-5 bg-hana-green/10 rounded-lg border border-hana-green/20 relative mt-2">
+                    <i data-lucide="quote" class="w-4 h-4 text-hana-green absolute top-2 left-2 opacity-50"></i>
+                    <h4 class="text-sm font-bold text-hana-text tracking-widest mb-2 mt-1">Mei Yang 美揚日系手作飾品</h4>
+                    <p class="text-xs md:text-sm leading-7 text-hana-text/80 font-normal text-justify md:text-left">
+                        日式職人手作技巧，搭配與結合不同異素材，使手作飾品呈現獨特美感，適合獨一無二特別的你/妳。
+                    </p>
+                </div>
+
+                <!-- 第三段：特點與品項 -->
+                <div class="pt-2 flex flex-col items-center md:items-start w-full">
+                    <!-- 特點 (單行橫向滑動) -->
+                    <div class="flex flex-nowrap overflow-x-auto no-scrollbar w-full justify-center md:justify-start gap-2 mb-3 pb-1">
+                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[12px] text-hana-text font-medium tracking-widest whitespace-nowrap">手工製作</span>
+                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[12px] text-hana-text font-medium tracking-widest whitespace-nowrap">原創飾品</span>
+                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[12px] text-hana-text font-medium tracking-widest whitespace-nowrap">日式手作</span>
+                        <span class="px-3 py-1 bg-hana-green/30 border border-hana-green/40 rounded-full text-[12px] text-hana-text font-medium tracking-widest whitespace-nowrap">異素材結合</span>
+                    </div>
+                    
+                    <!-- 品項 (單行文字列表) -->
+                    <div class="mt-2 border-t border-hana-line/50 pt-3 w-full text-center md:text-left">
+                         <p class="text-[12px] text-hana-secondary tracking-wider leading-loose">
+                            <span class="text-hana-accent font-bold mr-1">品項：</span>
+                            耳環 · 項鍊 · 手鍊 · 髮飾 · 髮夾 · 吊飾 · 配件
                         </p>
                     </div>
-                </div>
-            </a>
-        </section>
 
-        <!-- Footer -->
-        <footer class="text-center opacity-0 animate-fade-up pb-8" style="animation-delay: 0.4s; animation-fill-mode: forwards;">
-            <p class="font-display text-[10px] text-theme-secondary/40 tracking-[0.2em]">
-                MEIYANG ACCESSORY © 2024
-            </p>
-        </footer>
+                    <!-- 合作邀約 (位置調整至此) -->
+                    <div class="mt-4 w-full text-center md:text-left">
+                         <div class="text-xs text-hana-text font-medium tracking-wide inline-block py-2 px-4 border border-dashed border-hana-line rounded-md bg-white/50 w-full md:w-auto">
+                            歡迎合作邀約，可私訊聊聊 <span class="text-hana-accent font-normal ml-1">小幫手會盡速回復喔!!</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 社群追蹤區塊 -->
+            <div class="w-full bg-white/80 p-6 rounded-xl border border-hana-line mb-8 relative overflow-hidden group shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-hana-pink to-hana-green opacity-80"></div>
+                
+                <div class="text-center space-y-3 relative z-10">
+                    <h3 class="text-hana-accent font-bold tracking-widest text-sm flex items-center justify-center gap-2">
+                        <i data-lucide="instagram" class="w-4 h-4"></i> 官方 Instagram
+                    </h3>
+                    
+                    <p class="text-xs text-hana-text tracking-wide font-medium">
+                        歡迎關注 ➕ 🔍 <span class="font-sans font-bold text-hana-text ml-1 text-sm">meiyang.16888</span>
+                    </p>
+
+                    <a href="https://www.instagram.com/meiyang.16888" target="_blank" rel="noopener noreferrer" class="block w-full py-3 bg-hana-pink/30 border border-hana-pink/50 hover:bg-hana-pink/50 text-hana-text rounded-lg text-xs md:text-sm tracking-wider transition-all my-2 font-bold flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+                        <span>追蹤 IG 搶先看</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+
+                    <div class="flex justify-center flex-wrap gap-x-4 gap-y-1 text-[11px] text-hana-secondary font-medium font-sans">
+                        <span>▫️新品搶先看</span>
+                        <span>▫️不定時好康優惠</span>
+                        <span>▫️加碼抽好禮</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 精選作品區塊 (4張圖片) -->
+            <section class="mb-8 w-full mt-auto">
+                <div class="flex items-center gap-3 mb-4 justify-center md:justify-start opacity-80">
+                    <span class="text-xs tracking-[0.2em] text-hana-accent font-bold uppercase">Selected Works</span>
+                    <div class="h-[1px] flex-grow bg-hana-line/60 max-w-[80px]"></div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <!-- Item 1: 方形/貓掌款 -->
+                    <div class="aspect-square bg-white p-2 shadow-sm border border-hana-line/40 rounded-sm group overflow-hidden relative">
+                        <!-- 檔案: product_01.png -->
+                        <img src="product_01.png" class="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" alt="日系手作飾品">
+                        <div class="absolute bottom-0 left-0 w-full p-2 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <p class="text-[10px] text-hana-text text-center tracking-widest font-sans uppercase">Handmade</p>
+                        </div>
+                    </div>
+                    <!-- Item 2: 花朵圈圈款 -->
+                    <div class="aspect-square bg-white p-2 shadow-sm border border-hana-line/40 rounded-sm group overflow-hidden relative">
+                        <!-- 檔案: product_02.png -->
+                        <img src="product_02.png" class="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" alt="日系手作飾品">
+                        <div class="absolute bottom-0 left-0 w-full p-2 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <p class="text-[10px] text-hana-text text-center tracking-widest font-sans uppercase">Earrings</p>
+                        </div>
+                    </div>
+                    <!-- Item 3: 橢圓/幾何款 -->
+                    <div class="aspect-square bg-white p-2 shadow-sm border border-hana-line/40 rounded-sm group overflow-hidden relative">
+                        <!-- 檔案: product_03.png -->
+                        <img src="product_03.png" class="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" alt="日系手作飾品">
+                         <div class="absolute bottom-0 left-0 w-full p-2 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <p class="text-[10px] text-hana-text text-center tracking-widest font-sans uppercase">Resin Art</p>
+                        </div>
+                    </div>
+                     <!-- Item 4: 圓形耳針款 -->
+                    <div class="aspect-square bg-white p-2 shadow-sm border border-hana-line/40 rounded-sm group overflow-hidden relative">
+                        <!-- 檔案: product_04.png -->
+                        <img src="product_04.png" class="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" alt="日系手作飾品">
+                         <div class="absolute bottom-0 left-0 w-full p-2 bg-white/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <p class="text-[10px] text-hana-text text-center tracking-widest font-sans uppercase">Design</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer (純版權) -->
+            <footer class="mt-8 pt-6 border-t border-hana-line/30 flex flex-col items-center md:items-start text-center md:text-left relative z-10 w-full">
+                <div class="w-full text-center md:text-right">
+                    <p class="text-[10px] text-hana-secondary/60 tracking-[0.2em] font-sans font-medium">© 2024 Mei Yang 美揚日系手作飾品</p>
+                </div>
+            </footer>
+        </div>
 
     </main>
 
     <script>
         lucide.createIcons();
+
+        // 產生飄落的花瓣
+        function createPetals() {
+            const container = document.getElementById('petals-container');
+            const petalCount = 12;
+
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                
+                // 隨機大小、位置與動畫時間
+                const size = Math.random() * 10 + 6 + 'px';
+                petal.style.width = size;
+                petal.style.height = size;
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = Math.random() * 6 + 8 + 's';
+                petal.style.animationDelay = Math.random() * 5 + 's';
+                
+                // 隨機顏色微調
+                const colors = ['#F8E6E4', '#FADADD', '#FFF0F5'];
+                petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+                container.appendChild(petal);
+            }
+        }
+
+        createPetals();
     </script>
 </body>
 </html>
