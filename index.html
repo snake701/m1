@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mei Yang 美揚日系手作飾品 | 官方網站</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- 改用更穩定的 jsDelivr CDN 來載入 Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -121,12 +122,12 @@
                 </h1>
                 <p class="text-xs md:text-sm text-hana-secondary font-medium mt-3 tracking-[0.2em] uppercase font-sans text-center">Botanical & Accessory</p>
                 
-                <!-- 左側極簡社群按鈕 (新增) -->
+                <!-- 左側極簡社群按鈕 -->
                 <div class="flex items-center gap-3 mt-6 opacity-70">
-                    <a href="https://www.instagram.com/meiyang.16888" target="_blank" class="p-2 border border-hana-secondary/30 rounded-full hover:bg-hana-pink/20 hover:text-hana-accent transition-colors">
+                    <a href="https://www.instagram.com/meiyang.16888" target="_blank" class="p-2 border border-hana-secondary/30 rounded-full hover:bg-hana-pink/20 hover:text-hana-accent transition-colors flex items-center justify-center">
                         <i data-lucide="instagram" class="w-4 h-4"></i>
                     </a>
-                    <a href="#" class="p-2 border border-hana-secondary/30 rounded-full hover:bg-hana-green/20 hover:text-hana-green transition-colors" title="Contact">
+                    <a href="#" class="p-2 border border-hana-secondary/30 rounded-full hover:bg-hana-green/20 hover:text-hana-green transition-colors flex items-center justify-center" title="Contact">
                         <i data-lucide="mail" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -161,7 +162,7 @@
                     </p>
                 </div>
 
-                <!-- IG 極簡文字連結 (取代原本的大區塊) -->
+                <!-- IG 極簡文字連結 -->
                 <div class="flex justify-end md:justify-start">
                     <a href="https://www.instagram.com/meiyang.16888" target="_blank" class="inline-flex items-center gap-2 mt-1 px-3 py-1.5 border border-hana-line/40 rounded-full bg-white/50 text-hana-accent hover:bg-hana-pink/10 hover:border-hana-accent/40 transition-all duration-300 group cursor-pointer">
                         <i data-lucide="instagram" class="w-3.5 h-3.5 group-hover:scale-110 transition-transform"></i>
@@ -246,7 +247,18 @@
     </main>
 
     <script>
-        lucide.createIcons();
+        // 加入 DOMContentLoaded 確保網頁載入後才執行圖示渲染
+        document.addEventListener('DOMContentLoaded', () => {
+            // 渲染 Lucide 圖示
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.error("圖示庫載入失敗");
+            }
+            
+            // 執行飄落花瓣
+            createPetals();
+        });
 
         // 產生飄落的花瓣
         function createPetals() {
@@ -272,10 +284,7 @@
                 container.appendChild(petal);
             }
         }
-
-        createPetals();
     </script>
 </body>
 </html>
-
 
